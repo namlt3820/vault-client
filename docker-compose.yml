@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  vault_client:
+    container_name: "vault_client_${NODE_ENV}"
+    ports:
+      - "${GRAPHQL_PORT}:${GRAPHQL_PORT}"
+    environment:
+      - NODE_ENV
+    build:
+      context: .
+    restart: always
